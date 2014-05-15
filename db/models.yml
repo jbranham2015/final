@@ -1,3 +1,44 @@
+Region:
+  - Name: string
+  - Picture_url: string
+
+Country:
+  - name: string
+  - picture_url: string
+  - continent_id: integer
+
+Trip:
+  - name: string
+  - picture_url: string
+  - description: string
+  - itinerary_url: string
+  - budget_url: string
+  - priority_url: string
+  - country_id: integer
+
+Itinerary:
+  - day: integer
+  - city: string
+  - activity: text
+  - hotel: string
+  - transportation: string
+  - itinerary_url: string
+  - trip_id: integer
+
+Contact:
+  - type: string
+  - location: string
+  - company_name: string
+  - contact: string
+  - address: string
+  - phone_number: integer
+  - website: string
+  - trip_id: integer
+
+
+
+
+
 # Example table for a typical Book model.
 #
 # Book:

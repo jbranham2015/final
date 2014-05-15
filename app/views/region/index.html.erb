@@ -1,0 +1,8 @@
+<% region = Region.read %>
+
+
+<ul>
+<% region.each do |run| %>
+<li> Country <%= run["Name"] %> picture <%= image_tag run["Picture_url"] %> </li>
+<% end %>
+</ul>
