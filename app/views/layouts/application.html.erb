@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
+    <img id="image" src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg"/>
+</div>
 
+
+<div id="banner">
+<%= link_to "Region", "/" %>  |  <%= link_to "Country", "/country" %>  |  <%= link_to "Trip", "/trip" %>  |  <%= link_to "Itinerary", "/itinerary" %>  |  <%= link_to "Contact", "/contact" %>
+</div>
+<hr>
+<div id="page_start">
+</div>
 <%= yield %>
-
 </body>
 </html>

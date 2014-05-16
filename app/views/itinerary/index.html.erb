@@ -1,4 +1,19 @@
-day 1
-johanseberg
-partying
-hotel awesome
+  <p id="text">
+        Feast On Our Amazing Itineraries
+    </p>
+
+<% itinerary = Itinerary.read %>
+
+<ul>
+<% itinerary.each do |run| %>
+
+Day <%= run["Day"] %>
+<li> City <%= run["City"] %> </li>
+<li> Activities <%= link_to run["Activity"], "/contact" %> </li>
+<li> Hotel <%= link_to run["Hotel"], "/contact" %></li>
+<li> Transporation <%= link_to run["Transportation"], "/contact" %></li>
+<p> </p>
+
+<% end %>
+
+</ul>

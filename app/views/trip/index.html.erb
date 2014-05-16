@@ -1,3 +1,14 @@
-belizethat
-nicawhat
-germabeerdaphile
+  <p id="text">
+        Pick Your Next Trip
+    </p>
+
+<% trip = Trip.read %>
+
+<ul>
+<% trip.each do |run| %>
+
+<li>  <%= link_to run["Name"], "/trip/show" %>  <%=link_to image_tag(run["Picture_url"]), "/trip/show" %> </div> </li>
+
+<% end %>
+</ul>
+

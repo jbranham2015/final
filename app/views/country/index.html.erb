@@ -1,4 +1,14 @@
-Belize
-costa rica
-spain
-france
+  <p id="text">
+        Explore Our Countries
+    </p>
+
+<% country = Country.read %>
+
+<ul>
+<% country.each do |run| %>
+
+<li>  <%= link_to run["Name"], "/trip" %>  <%=link_to image_tag(run["Picture_url"]), "/trip" %>  </li>
+
+<% end %>
+</ul>
+</div>

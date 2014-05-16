@@ -1,3 +1,17 @@
-budget is $3000
-cool priority matrix
-cool itinerary matrix
+
+<% trips = Trip.read %>
+
+<% trips.each do |run| %>
+
+<%= link_to run["Name"], "/itinerary" %>
+<li> <%= link_to image_tag(run["Picture_url"]), "/itinerary" %></li>
+<li> <%= run["Description"] %> </li>
+<li> <%= image_tag(run["Budget_url"]) %></li>
+<li> <%= image_tag(run["Priority_url"]) %></li>
+<li> <%= image_tag(run["Itinerary_url"]) %></li>
+<% end %>
+
+
+
+
+
