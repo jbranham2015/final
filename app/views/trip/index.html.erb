@@ -7,7 +7,7 @@
 <ul>
 <% trip.each do |run| %>
 
-<li>  <%= link_to run["Name"], "/trip/show" %>  <%=link_to image_tag(run["Picture_url"]), "/trip/show" %> </div> </li>
+<li>  <%= link_to run["Name"], "/trip/#{run["id"]}" %>  <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %> </div> </li>
 
 <% end %>
 </ul>

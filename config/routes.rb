@@ -7,12 +7,15 @@ get "/region/show" => "region#show"
 
 get "/country" => "country#index"
 get "/country/show" => "country#show"
+get "/country/:id" => "country#show"
 
 get "/trip" => "trip#index"
 get "/trip/show" => "trip#show"
+get "/trip/:id" => "trip#show"
 
 get "/itinerary" => "itinerary#index"
 get "/itinerary/show" => "itinerary#show"
+get "itinerary/:id" => "itinerary#show"
 
 get "/contact" => "contact#index"
 
