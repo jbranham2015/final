@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515025835) do
+ActiveRecord::Schema.define(version: 20140516210020) do
 
   create_table "contacts", force: true do |t|
     t.string  "Type"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140515025835) do
     t.string  "Company_name"
     t.string  "Contact"
     t.string  "Address"
-    t.integer "Phone_number"
+    t.string  "Phone_number"
     t.string  "Website"
     t.integer "Trip_id"
   end
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140515025835) do
   create_table "countries", force: true do |t|
     t.string  "Name"
     t.string  "Picture_url"
-    t.integer "Continent_id"
+    t.integer "Region_id"
   end
 
   create_table "itineraries", force: true do |t|

@@ -1,10 +1,15 @@
 
+inside this  i should get the list of itinerarires.  when i clock on an itinerary it should link me to itinerary/show
+
+need to add params here to show the trips that map with the countries that bring you here
 <% trips = Trip.read %>
+
+
 
 <% trips.each do |run| %>
 
-<%= link_to run["Name"], "/itinerary" %>
-<li> <%= link_to image_tag(run["Picture_url"]), "/itinerary" %></li>
+<%= link_to run["Name"], "/itinerary/show" %>
+<li> <%= link_to image_tag(run["Picture_url"]), "/itinerary/show" %></li>
 <li> <%= run["Description"] %> </li>
 <li> <%= image_tag(run["Budget_url"]) %></li>
 <li> <%= image_tag(run["Priority_url"]) %></li>

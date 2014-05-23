@@ -23,9 +23,12 @@ What you will find on our site:  A never ending list of pre-built itineraries wh
 <% region = Region.read %>
 
 <ul>
+
 <% region.each do |run| %>
 
-<li>  <%= link_to run["Name"], "/country" %>  <%=link_to image_tag(run["Picture_url"]), "/country" %>  </li>
+<div class="row">
+<li>  <%= link_to run["Name"], "/region/#{run["id"]}" %>  <%=link_to image_tag(run["Picture_url"]), "/region/#{run["id"]}" %>  </li>
+</div>
 
 <% end %>
 </ul>

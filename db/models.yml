@@ -5,7 +5,7 @@ Region:
 Country:
   - Name: string
   - Picture_url: string
-  - Continent_id: integer
+  - Region_id: integer
 
 Trip:
   - Name: string
@@ -31,7 +31,7 @@ Contact:
   - Company_name: string
   - Contact: string
   - Address: string
-  - Phone_number: integer
+  - Phone_number: string
   - Website: string
   - Trip_id: integer
 

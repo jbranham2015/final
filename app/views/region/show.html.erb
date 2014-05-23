@@ -1,0 +1,19 @@
+<% region_id = params["id"] %>
+<% regions = Region.read(region_id) %>
+<% countries = Country.read("Region_id" => regions["id"]) %>
+
+<p id="text">
+        Explore Trips By Region
+    </p>
+
+<ul>
+<% countries.each do |run| %>
+<li><%= link_to run["Name"], "/country/show" %>  <%=link_to image_tag(run["Picture_url"]), "/country/show" %>  </li>
+<% end %>
+</ul>
+
+
+
+
+
+

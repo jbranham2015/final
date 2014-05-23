@@ -1,3 +1,17 @@
   <p id="text">
         Book Your Excursions
     </p>
+
+<% contacts = Contact.read %>
+<ul>
+<% contacts.each do |run| %>
+<li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
+<li> <strong> Company Name: </strong>   <%= run["Company_name"] %> </li>
+<li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
+<li> <strong> Address:  </strong> <%= run["Address"] %> </li>
+<li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
+<li> <strong> Website:  </strong> <%= link_to run["Website"] %> </li>
+<p>
+</p>
+<% end %>
+</ul>
