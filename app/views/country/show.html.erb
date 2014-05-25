@@ -8,7 +8,7 @@
 
 
 <ul>
-  <% trips = Trip.read %>
+
   <% trips.each do |run| %>
 
     <li>
@@ -18,8 +18,3 @@
   <% end %>
 </ul>
 
-why doesn't this work?????? If i take out
-
-trips = Trip.read
-
-and try to let it do the params run to only show the trips within a particular country the page is blank.  I don't get an error, it just doesnt work?  If i leave as is it dumbly runs all of the trips regardless of country in the Trip model.

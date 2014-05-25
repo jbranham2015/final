@@ -6,11 +6,10 @@ inside this would be my list of contacts withint this specific itinerary.
 <ul>
 <% contacts.each do |run| %>
 <li>Type of Event:   <%= run["Type"] %> </li>
-<li>Company Name:   <%= run["Company_name"] %> </li>
+<li>Company Name:   <%= link_to run["Company_name"] , run["Website"] %> </li>
 <li>Personal Contact (if any):   <%= run["Contact"] %> </li>
 <li>Address:   <%= run["Address"] %> </li>
 <li>Phone Number:   <%= run["Phone_number"] %> </li>
-<li>Website:   <%= run["Website"] %> </li>
 <p></p>
 <% end %>
 </ul>
