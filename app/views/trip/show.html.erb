@@ -1,17 +1,17 @@
+<% trip_id = params["id"] %>
+<% trips = Trip.read(trip_id) %>
+<% itineraries = Itinerary.read("Trip_id" => trips["id"]) %>
 
 
-
-<% trips = Trip.read %>
-
-
-<% trips.each do |run| %>
-
-<%= link_to run["Name"], "/itinerary/show" %>
-<li> <%= link_to image_tag(run["Picture_url"]), "/itinerary/show" %></li>
-<li> <%= run["Description"] %> </li>
-<li> <%= image_tag(run["Budget_url"]) %></li>
-<li> <%= image_tag(run["Priority_url"]) %></li>
-<li> <%= image_tag(run["Itinerary_url"]) %></li>
+<% itineraries.each do |run| %>
+<li> Itinerary: <%= image_tag(run["Itinerary_url"]) %></li>
+<p></p>
+<strong>Day <%= run["Day"] %></strong>
+<li> City: <%= link_to run["City"], "/itinerary/#{run["id"]}"  %></li>
+<li> Activity: <%= run["Activity"] %> </li>
+<li> Hotel: <%= link_to run["Hotel"], "/itinerary/#{run["id"]}" %></li>
+<li> Transportation: <%= link_to run["Transportation"], "/itinerary/#{run["id"]}"  %></li>
+<p></p>
 <% end %>
 
 

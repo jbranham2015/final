@@ -1,8 +1,7 @@
-inside this would be my list of contacts withint this specific itinerary.
- I need to map a params hash here to pull the specific itinerary for the trip id that was clicked on
+<% itinerary_id = params["id"] %>
+<% itineraries = Itinerary.read(itinerary_id) %>
+<% contacts = Contact.read("Trip_id" => itineraries["id"]) %>
 
-
-<% contacts = Contact.read %>
 <ul>
 <% contacts.each do |run| %>
 <li>Type of Event:   <%= run["Type"] %> </li>
