@@ -11,14 +11,14 @@
 
   <% trips.each do |run| %>
 
-    <li>
-         <%= link_to run["Name"], "/trip/#{run["id"]}" %></li>
-      <li>   <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %></li>
-         <li><%= run["Description"] %></li>
-         <li><%= image_tag(run["Budget_url"]) %></li>
-         <li><%= image_tag(run["Priority_url"]) %></li>
-         <li><%= image_tag(run["Itinerary_url"]) %>
-    </li>
+
+       <h3>  <%= link_to run["Name"], "/trip/#{run["id"]}" %> </h3>
+        <%= run["Description"] %>
+       <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %>
+        <%= image_tag(run["Budget_url"]) %>
+         <%= image_tag(run["Priority_url"]) %>
+         <%= image_tag(run["Itinerary_url"]) %>
+
   <% end %>
 </ul>
 
