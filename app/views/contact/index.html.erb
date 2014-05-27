@@ -1,10 +1,12 @@
   <p id="text">
         Book Your Excursions
     </p>
+<h1> Contacts </h1>
 
 <% contacts = Contact.read %>
 <ul>
 <% contacts.each do |run| %>
+<h3> <strong>  <%= run["Name"] %> </strong> </h3>
 <li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
 <li> <strong> Company Name: </strong>   <%= link_to run["Company_name"] , run["Website"] %> </li>
 <li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>

@@ -5,15 +5,19 @@
 <% itinerary = Itinerary.read %>
 
 <ul>
+<h1> Itineraries </h1>
+
 <% itinerary.each do |run| %>
 
-Day <%= run["Day"] %>
-<li> City <%= run["City"] %> </li>
-<li> Activities <%= link_to run["Activity"], "/itinerary/show" %> </li>
-<li> Hotel <%= link_to run["Hotel"], "/itinerary/show" %></li>
-<li> Transporation <%= link_to run["Transportation"], "/itinerary/show" %></li>
+<h3> <strong>  <%= run["Name"] %> </strong> </h3>
+<%= image_tag(run["Itinerary_url"]) %>
+<strong> Day </strong> <%= run["Day"] %>
+<li> <strong> City </strong> <%= run["City"] %> </li>
+<li> <strong> Activities </strong> <%= run["Activity"] %> </li>
+<li> <strong> Hotel </strong> <%= run["Hotel"] %></li>
+<li> <strong> Transporation </strong> <%= run["Transportation"] %></li>
 <p> </p>
-
 <% end %>
 
 </ul>
+

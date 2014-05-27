@@ -17,6 +17,7 @@ Trip:
   - Country_id: integer
 
 Itinerary:
+  - Name: string
   - Day: integer
   - City: string
   - Activity: text
@@ -26,6 +27,7 @@ Itinerary:
   - Trip_id: integer
 
 Contact:
+  - Name: string
   - Type: string
   - Location: string
   - Company_name: string
