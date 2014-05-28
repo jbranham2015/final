@@ -5,9 +5,9 @@
 
 <ul>
 <h2> Itinerary </h2>
+
 <% itineraries.each do |run| %>
-<%= image_tag(run["Itinerary_url"]) %>
-<p></p>
+<p><%= image_tag(run["Itinerary_url"]) %></p>
 <strong>Day </strong> <%= run["Day"] %>
 <li> <strong> City: </strong> <%= run["City"] %>  </li>
 <li> <strong> Activity: </strong> <%= run["Activity"] %>  </li>

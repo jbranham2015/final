@@ -9,15 +9,18 @@
 
 <% itinerary.each do |run| %>
 
-<h3> <strong>  <%= run["Name"] %> </strong> </h3>
+<h2> <%= run["Name"] %> </h2>
 <%= image_tag(run["Itinerary_url"]) %>
+<div class="row">
 <strong> Day </strong> <%= run["Day"] %>
 <li> <strong> City </strong> <%= run["City"] %> </li>
 <li> <strong> Activities </strong> <%= run["Activity"] %> </li>
 <li> <strong> Hotel </strong> <%= run["Hotel"] %></li>
 <li> <strong> Transporation </strong> <%= run["Transportation"] %></li>
+</div>
 <hr>
-<p> </p>
+
+
 <% end %>
 
 </ul>

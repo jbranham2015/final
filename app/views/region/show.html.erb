@@ -8,9 +8,9 @@
 
 <ul>
 <% countries.each do |run| %>
-<div class="row">
-<li><%= link_to run["Name"], "/country/#{run["id"]}" %>  <%=link_to image_tag(run["Picture_url"]), "/country/#{run["id"]}" %>  </li>
-</div>
+    <h2> <%= link_to run["Name"], "/country/#{run["id"]}" %> </h2>
+      <%=link_to image_tag(run["Picture_url"]), "/country/#{run["id"]}" %>
+
 <hr>
 <% end %>
 </ul>
