@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
   </head>
 <body>
@@ -16,15 +16,19 @@
         <div class="row">
 
 
-    <img id="topimage" src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg">
+             <img id="topimage" src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg">
 
-</div>
+       </div>
 
+<div class="row">
 <div class="banner col-md-6">
+
 
 <%= link_to "Regions", "/" %>  |  <%= link_to "Countries", "/country" %>  |  <%= link_to "Trips", "/trip" %>  |  <%= link_to "Itineraries", "/itinerary" %>  |  <%= link_to "Contacts", "/contact" %>
 </div>
-         <div class="banner col-md-4 col-md-offset-8">
+
+  <div class="banner col-md-4 col-md-offset-8">
+
             <% user = User.find_by("id" => cookies["user_id"]) %>
             <% if user.present? %>
               Welcome <%= user["name"] %>
@@ -34,7 +38,7 @@
               <%= link_to "Sign In", '/login' %>
             <% end %>
     </div>
-
+</div>
 <div id="page_start">
 </div>
 

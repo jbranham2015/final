@@ -4,8 +4,8 @@
 
 <% itinerary = Itinerary.read %>
 
-<ul>
-<h1> Itineraries </h1>
+
+<button type="button" class='btn btn-lg btn-primary btn-block'>Itineraries</button>
 
 <% itinerary.each do |run| %>
 
@@ -13,6 +13,7 @@
 <%= image_tag(run["Itinerary_url"]) %>
 <div class="row">
 <strong> Day </strong> <%= run["Day"] %>
+<ul class="list-unstyled">
 <li> <strong> City </strong> <%= run["City"] %> </li>
 <li> <strong> Activities </strong> <%= run["Activity"] %> </li>
 <li> <strong> Hotel </strong> <%= run["Hotel"] %></li>
@@ -20,8 +21,8 @@
 </div>
 <hr>
 
-
+</ul>
 <% end %>
 
-</ul>
+
 

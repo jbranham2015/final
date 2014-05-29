@@ -3,8 +3,8 @@
 <% itineraries = Itinerary.read("Trip_id" => trips["id"]) %>
 <% contacts = Contact.read("Trip_id" => trips["id"]) %>
 
-<ul>
-<h2> Itinerary </h2>
+<ul class="list-unstyled">
+<h2><button type="button" class="btn btn-primary btn-lg btn-block disabled"> Itinerary </button></h2>
 
 <% itineraries.each do |run| %>
 <p><%= image_tag(run["Itinerary_url"]) %></p>
@@ -18,11 +18,11 @@
 </ul>
 <p></p>
 
-<ul>
+<ul class="list-unstyled">
 <h2> Booking Contacts For Your Adventure </h2>
 <% contacts.each do |run| %>
 <li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
-<li> <strong> Company Name: </strong>   <%= link_to run["Company_name"] , run["Website"] %> </li>
+<li> <strong> Company Name: </strong>   <%= link_to run["Company_name"], run["Website"] %> </li>
 <li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
 <li> <strong> Address:  </strong> <%= run["Address"] %> </li>
 <li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
@@ -32,3 +32,23 @@
 <% end %>
 </ul>
 
+
+<h1>***** ask brian or jeff how to do this in one continuous table ****</h1>
+<% contacts.each do |run| %>
+<table class="table table-bordered table-striped table-hover table-condensed">
+<tr>
+  <th>Event Type</th>
+  <th>Company Name</th>
+  <th>Personal Contact (if any)</th>
+  <th>Address</th>
+  <th>Phone Number(if any)</th>
+</tr>
+<tr class="active">
+  <td><%= run["Type"] %></td>
+  <td><%= link_to run["Company_name"], run["Website"] %></td>
+  <td><%= run["Contact"] %></td>
+   <td><%= run["Address"] %></td>
+    <td><%= run["Phone_number"] %></td>
+   </tr>
+</table>
+<% end %>

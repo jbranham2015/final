@@ -2,10 +2,10 @@
 <% itineraries = Trip.read(itinerary_id) %>
 <% contacts = Contact.read("Trip_id" => itineraries["id"]) %>
 
-<ul>
+<ul class="list-unstyled">
 <% contacts.each do |run| %>
 <li>Type of Event:   <%= link_to run["Type"] %> </li>
-<li>Company Name:   <%= link_to run["Company_name"] , run["Website"] %> </li>
+<li>Company Name:   <%= link_to run["Company_name"], run["Website"] %> </li>
 <li>Personal Contact (if any):   <%= run["Contact"] %> </li>
 <li>Address:   <%= run["Address"] %> </li>
 <li>Phone Number:   <%= run["Phone_number"] %> </li>
@@ -16,7 +16,7 @@
 
 <p></p>
 
-<ul>
+<ul class="list-unstyled">
 <h2> Booking Contacts For Your Adventure </h2>
 <% contacts.each do |run| %>
 <li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>

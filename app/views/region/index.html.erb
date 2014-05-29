@@ -5,32 +5,55 @@
         Welcome to Ex-Travel-Ganza
     </p>
 
-<p>
- <strong> Who We Are: </strong>  Your portal to the most outrageous, adventerous, worldwide, 7-day vacations you've never had to plan!  If you've ever had 7 days to burn and became overwhelmed by the thought of who/what/where/when/why/how you are suppsoed to plan your vacation....we are your one-stop shop solution.
- </p>
+<dl>
+  <dt>Who We Are</dt>
+      <dd>
+           <p class="text-justify">
+               Your portal to the most outrageous, adventerous, worldwide, 7-day vacations you've never had to plan!  If you've ever had 7 days to burn and became overwhelmed by the thought of who/what/where/when/why/how you are suppsoed to plan your vacation....we are your one-stop shop solution.
+           </p>
+      </dd>
+  </dl>
+
+<dl>
+  <dt>What you will find on our site</dt>
+      <dd>
+           <p class="text-justify">
+               A never ending list of pre-built itineraries which were excruciatingly planned, and then awesomely traveled yearly by 800+ of the most exclusive business school travelers in the country: Kellogg MBA students.  Each trip includes a high-level budget, a list of providers for each activity and is ranked by level of:
+           </p>
+      </dd>
+  </dl>
 
 <p>
-<strong> What you will find on our site: </strong> A never ending list of pre-built itineraries which were excruciatingly planned, and then awesomely traveled yearly by 800+ of the most exclusive business school travelers in the country: Kellogg MBA students.  Each trip includes a high-level budget, a list of providers for each activity and is ranked by level of: <li> Culture/sightseeing </li> <li>Nightlife </li> <li> Physical Exertion</li> <li> Accomodations</li> <li> Free Time </li>
+   <li> Culture/sightseeing </li>
+   <li>Nightlife </li>
+   <li> Physical Exertion</li>
+   <li> Accomodations</li>
+   <li> Free Time </li>
 </p>
 
- <p>
- <strong> How you should navigate: </strong>  Start by identifying what continent you'd like to travel.  You will then see a list of countries with itineraries to suit your needs.  Each country has a list of multiple trips, which you can then sort through to view specific 7-day itineraries and a list of contacts to start booking!  So sit back, relax and enjoy perusing some of the best trips your brain could possibly imagine, all without spending a minute researching each location.
- </p>
-
-
-
+<dl>
+  <dt>How you should navigate</dt>
+      <dd>
+           <p class="text-justify">
+                Start by identifying what continent you'd like to travel.  You will then see a list of countries with itineraries to suit your needs.  Each country has a list of multiple trips, which you can then sort through to view specific 7-day itineraries and a list of contacts to start booking!  So sit back, relax and enjoy perusing some of the best trips your brain could possibly imagine, all without spending a minute researching each location.
+           </p>
+      </dd>
+  </dl>
 
 <% region = Region.read %>
 
-<ul>
+<ul class="list-unstyled">
 
 <% region.each do |run| %>
-
-<h3>  <%= link_to "Add a New Region", "/region/new", "class" => 'btn btn-lg btn-primary' %> </h3>
-  <h2><%= link_to run["Name"], "/region/#{run["id"]}" %> </h2>
-  <%=link_to image_tag(run["Picture_url"]), "/region/#{run["id"]}" %>
-<h3>(<%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete" %>)
-      (<%= link_to "Edit", "/region/#{run["id"]}/edit" %>)</h3>
+ <%= link_to "Add a New Region", "/region/new", "class" => 'btn btn-lg btn-primary btn-block' %>
+   <%= link_to run["Name"], "/region/#{run["id"]}", "class" => 'btn btn-lg btn-default btn-block' %>
+       <div class="row">
+        <div class="col-md-12">
+          <%=link_to image_tag(run["Picture_url"]), "/region/#{run["id"]}" %>
+       </div>
+      </div>
+    <%= link_to "Edit", "/region/#{run["id"]}/edit", "class" => 'btn btn-lg btn-primary' %>
+   <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete", "class" => 'btn btn-lg btn-default disabled' %>
 <hr>
 <% end %>
 </ul>

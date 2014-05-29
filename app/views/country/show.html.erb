@@ -1,3 +1,4 @@
+
 <p id="text">
         Pick Your Next Trip
 </p>
@@ -7,19 +8,73 @@
 <% trips = Trip.read("Country_id" => countries["id"]) %>
 
 
-<ul>
+<ul class="list-unstyled">
 
   <% trips.each do |run| %>
+<dl>
+  <dt>Trip Summary</dt>
+      <dd>
+           <p class="text-justify">
+              <%= run["Description"] %>
+           </p>
+      </dd>
+  </dl>
+      <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %>
 
+            <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %>
+</br>
+</br>
+<dl>
+    <dt>Trip Budget</dt>
+      <dd>
+          All budget items are estimates and based on airfare from the ChicagoLand Area
+      </dd>
+    </dl>
+     <%= image_tag(run["Budget_url"]) %>
 
-       <h2>  <%= link_to run["Name"], "/trip/#{run["id"]}" %> </h2>
-
-        <p> <%= run["Description"] %> </p>
-      <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %>
-       <%= image_tag(run["Budget_url"]) %>
-        <%= image_tag(run["Priority_url"]) %>
-         <%= image_tag(run["Itinerary_url"]) %>
-
-  <% end %>
+</br>
+</br>
+</br>
+<div class="row">
+  <div class="col-md-4">
+    <dl>
+      <dt>Trip Priorities</dt>
+        <dd>
+            Rankings are based on the following criteria
+      </dd>
+    </dl>
+ <p>
+   <strong>Culture / Sightseeing:</strong>
+       <li>1=Museums exist in this country</li>
+       <li>5=Ruins, monuments, museums, OH MY!</li>
+ </p>
+ <p>
+    <strong> Nightlife: </strong>
+        <li>1=We need our beauty sleep so lights out at 10pm</li>
+        <li>5=Sleep when you’re dead YOLO!</li>
+ </p>
+ <p>
+     <strong> Physical Exertion: </strong>
+         <li>1=Getting to the beach lounger was enough activity for today</li>
+         <li>5=You should probably start hitting the gym now to prep</li>
+ </p>
+ <p>
+     <strong>Accommodation: </strong>
+           <li>1=Hostel</li>
+           <li>5=Villa, baby!</li>
+ </p>
+ <p>
+     <strong>Free time: </strong>
+           <li>1=Go, go, go!!!</li>
+           <li>5=We need our ‘me’ time</li>
+ </p>
+ </div>
+<div class="col-md-6">
+   <%= image_tag(run["Priority_url"]) %>
+</div>
+</div>
+<%= image_tag(run["Itinerary_url"]) %>
+<% end %>
 </ul>
+
 

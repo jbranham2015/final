@@ -5,11 +5,11 @@
 
 <% country = Country.read %>
 
-<ul>
+<ul class="list-unstyled">
 <% country.each do |run| %>
 
 
- <h2><%= link_to run["Name"], "/country/#{run["id"]}" %> </h2>
+ <h2><%= link_to run["Name"], "/country/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
  <%=link_to image_tag(run["Picture_url"]), "/country/#{run["id"]}" %>
 
 <hr>

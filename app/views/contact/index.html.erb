@@ -1,10 +1,10 @@
   <p id="text">
         Book Your Excursions
     </p>
-<h1> Contacts </h1>
+<button type="button" class='btn btn-lg btn-primary btn-block'>Contacts</button>
 
 <% contacts = Contact.read %>
-<ul>
+<ul class="list-unstyled">
 <% contacts.each do |run| %>
 <h3> <strong>  <%= run["Name"] %> </strong> </h3>
 <li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
