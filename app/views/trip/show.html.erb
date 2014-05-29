@@ -4,7 +4,8 @@
 <% contacts = Contact.read("Trip_id" => trips["id"]) %>
 
 <ul class="list-unstyled">
-<h2><button type="button" class="btn btn-primary btn-lg btn-block disabled"> Itinerary </button></h2>
+<h2><button type="button" class="btn btn-primary btn-lg btn-block disabled">
+   <span class="glyphicon glyphicon-plane"> </span> Itinerary </button></h2>
 
 <% itineraries.each do |run| %>
 <p><%= image_tag(run["Itinerary_url"]) %></p>

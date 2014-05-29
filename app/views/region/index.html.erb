@@ -6,8 +6,8 @@
     </p>
 
 <dl>
-  <dt>Who We Are</dt>
-      <dd>
+  <dt>Who We Are  <span class="glyphicon glyphicon-plane"> </span>  </dt>
+         <dd>
            <p class="text-justify">
                Your portal to the most outrageous, adventerous, worldwide, 7-day vacations you've never had to plan!  If you've ever had 7 days to burn and became overwhelmed by the thought of who/what/where/when/why/how you are suppsoed to plan your vacation....we are your one-stop shop solution.
            </p>
@@ -15,7 +15,7 @@
   </dl>
 
 <dl>
-  <dt>What you will find on our site</dt>
+  <dt>What you will find on our site <span class="glyphicon glyphicon-briefcase"></dt>
       <dd>
            <p class="text-justify">
                A never ending list of pre-built itineraries which were excruciatingly planned, and then awesomely traveled yearly by 800+ of the most exclusive business school travelers in the country: Kellogg MBA students.  Each trip includes a high-level budget, a list of providers for each activity and is ranked by level of:
@@ -32,7 +32,7 @@
 </p>
 
 <dl>
-  <dt>How you should navigate</dt>
+  <dt>How you should navigate <span class="glyphicon glyphicon-road"></dt>
       <dd>
            <p class="text-justify">
                 Start by identifying what continent you'd like to travel.  You will then see a list of countries with itineraries to suit your needs.  Each country has a list of multiple trips, which you can then sort through to view specific 7-day itineraries and a list of contacts to start booking!  So sit back, relax and enjoy perusing some of the best trips your brain could possibly imagine, all without spending a minute researching each location.
@@ -45,15 +45,23 @@
 <ul class="list-unstyled">
 
 <% region.each do |run| %>
- <%= link_to "Add a New Region", "/region/new", "class" => 'btn btn-lg btn-primary btn-block' %>
-   <%= link_to run["Name"], "/region/#{run["id"]}", "class" => 'btn btn-lg btn-default btn-block' %>
-       <div class="row">
+ <button type="button" class="btn btn-primary btn-lg btn-block active">
+   <span class="glyphicon glyphicon-plus-sign"> </span><%= link_to "Add a New Region", "/region/new" %> </button>
+
+   <button type="button" class="btn btn-default btn-lg btn-block active">
+   <span class="glyphicon glyphicon-globe"> </span> <%= link_to run["Name"], "/region/#{run["id"]}" %> </button>
+
+        <div class="row">
         <div class="col-md-12">
           <%=link_to image_tag(run["Picture_url"]), "/region/#{run["id"]}" %>
        </div>
       </div>
-    <%= link_to "Edit", "/region/#{run["id"]}/edit", "class" => 'btn btn-lg btn-primary' %>
-   <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete", "class" => 'btn btn-lg btn-default disabled' %>
+     <button type="button" class="btn btn-primary btn-lg active">
+        <span class="glyphicon glyphicon-edit"> </span> <%= link_to "Edit", "/region/#{run["id"]}/edit" %> </button>
+
+    <button type="button" class="btn btn-default btn-lg disabled">
+         <span class="glyphicon glyphicon-ban-circle"> </span> <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete" %> </button>
+
 <hr>
 <% end %>
 </ul>
