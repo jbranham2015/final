@@ -17,7 +17,7 @@ class RegionController < ApplicationController
   def update
     region = Region.find_by("id" => params["id"])
     region.update("Name" => params["id"], "Picture_url" => params["id"])
-    redirect_to "/region"
+    redirect_to "/"
   end
 
 end

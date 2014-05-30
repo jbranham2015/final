@@ -53,13 +53,13 @@
 
         <div class="row">
         <div class="col-md-12">
-          <%=link_to image_tag(run["Picture_url"]), "/region/#{run["id"]}" %>
+          <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/region/#{run["id"]}" %>
        </div>
       </div>
      <button type="button" class="btn btn-primary btn-lg active">
         <span class="glyphicon glyphicon-edit"> </span> <%= link_to "Edit", "/region/#{run["id"]}/edit" %> </button>
 
-    <button type="button" class="btn btn-default btn-lg disabled">
+    <button type="button" class="btn btn-default btn-lg active">
          <span class="glyphicon glyphicon-ban-circle"> </span> <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete" %> </button>
 
 <hr>

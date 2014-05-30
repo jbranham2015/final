@@ -3,3 +3,61 @@
 <p>Name: <%= @user["name"] %></p>
 <p>Username: <%= @user["username"] %></p>
 <p>Password: <%= @user["password"] %></p>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ex-Travel-Ganza</title>
+    <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  </head>
+<body>
+
+<div class="container">
+
+        <div class="row">
+
+             <img src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg" class="img-responsive" alt="Responsive image" id="topimage">
+
+
+       </div>
+
+
+<div class="row">
+
+  <div class="bar col-md-12">
+    <div class="btn-group">
+        <button type="button" class="btn btn primary"> <%= link_to "Regions", "/" %></button>
+        <button type="button" class="btn btn primary"> <%= link_to "Countries", "/country" %></button>
+        <button type="button" class="btn btn primary"> <%= link_to "Trips", "/trip" %></button>
+        <button type="button" class="btn btn primary"> <%= link_to "Itineraries", "/itinerary" %></button>
+        <button type="button" class="btn btn primary"> <%= link_to "Contacts", "/contact" %></button>
+    </div>
+  </div>
+
+
+  <div class="bar col-md-4 col-md-offset-8">
+    <div class="btn-group">
+
+          <button type="button" class="btn btn primary">  <% user = User.find_by("id" => cookies["user_id"]) %>
+            <% if user.present? %>
+              Welcome <%= user["name"] %> </button>
+               <button type="button" class="btn btn primary"> <%= link_to "Sign Out", '/logout' %> </button>
+            <% else %>
+              <button type="button" class="btn btn primary"> <%= link_to "Sign Up", '/users/new' %></button>
+              <button type="button" class="btn btn primary"> <%= link_to "Sign In", '/login' %> </button>
+            <% end %>
+    </div>
+   </div>
+  </div>
+<div id="page_start">
+</div>
+
+<%= yield %>
+</div>
+</body>
+</html>

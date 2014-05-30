@@ -19,3 +19,25 @@
 </p>
 <% end %>
 </ul>
+
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+<tr>
+  <th>Country</th>
+  <th>Event Type</th>
+  <th>Company Name</th>
+  <th>Personal Contact (if any)</th>
+  <th>Address</th>
+  <th>Phone Number(if any)</th>
+</tr>
+<% contacts.each do |run| %>
+<tr class="active">
+  <td><strong> <%= run["Name"] %> </strong></td>
+  <td><%= run["Type"] %></td>
+  <td><%= link_to run["Company_name"], run["Website"] %></td>
+  <td><%= run["Contact"] %></td>
+   <td><%= run["Address"] %></td>
+    <td><%= run["Phone_number"] %></td>
+   </tr>
+<% end %>
+</table>

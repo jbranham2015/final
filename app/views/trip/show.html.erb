@@ -2,13 +2,22 @@
 <% trips = Trip.read(trip_id) %>
 <% itineraries = Itinerary.read("Trip_id" => trips["id"]) %>
 <% contacts = Contact.read("Trip_id" => trips["id"]) %>
+<% order = contacts.order("Type asc") %>
 
 <ul class="list-unstyled">
 <h2><button type="button" class="btn btn-primary btn-lg btn-block disabled">
    <span class="glyphicon glyphicon-plane"> </span> Itinerary </button></h2>
 
 <% itineraries.each do |run| %>
-<p><%= image_tag(run["Itinerary_url"]) %></p>
+<% if run["Day"] ==1 %>
+     <button type="button" class="btn btn-default btn-lg btn-block disabled">
+         <%= run["Name"] %>
+      </button>
+</br>
+<p><%= image_tag(run["Itinerary_url"], "class" => "itinerary_banner") %><p>
+<% end %>
+
+
 <strong>Day </strong> <%= run["Day"] %>
 <li> <strong> City: </strong> <%= run["City"] %>  </li>
 <li> <strong> Activity: </strong> <%= run["Activity"] %>  </li>
@@ -19,23 +28,6 @@
 </ul>
 <p></p>
 
-<ul class="list-unstyled">
-<h2> Booking Contacts For Your Adventure </h2>
-<% contacts.each do |run| %>
-<li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
-<li> <strong> Company Name: </strong>   <%= link_to run["Company_name"], run["Website"] %> </li>
-<li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
-<li> <strong> Address:  </strong> <%= run["Address"] %> </li>
-<li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
-<hr>
-<p>
-</p>
-<% end %>
-</ul>
-
-
-<h1>***** ask brian or jeff how to do this in one continuous table ****</h1>
-<% contacts.each do |run| %>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <tr>
   <th>Event Type</th>
@@ -44,6 +36,7 @@
   <th>Address</th>
   <th>Phone Number(if any)</th>
 </tr>
+<% order.each do |run| %>
 <tr class="active">
   <td><%= run["Type"] %></td>
   <td><%= link_to run["Company_name"], run["Website"] %></td>
@@ -51,5 +44,11 @@
    <td><%= run["Address"] %></td>
     <td><%= run["Phone_number"] %></td>
    </tr>
-</table>
 <% end %>
+</table>
+
+
+
+
+
+

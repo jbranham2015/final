@@ -21,7 +21,7 @@
   </dl>
       <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %>
 
-            <%=link_to image_tag(run["Picture_url"]), "/trip/#{run["id"]}" %>
+            <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
 </br>
 </br>
 <dl>

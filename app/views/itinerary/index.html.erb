@@ -1,5 +1,5 @@
   <p id="text">
-        Feast On Our Amazing Itineraries
+
     </p>
 
 <% itinerary = Itinerary.read %>
@@ -9,8 +9,10 @@
 
 <% itinerary.each do |run| %>
 
+<% if run["Day"] ==1 %>
 <h2> <%= run["Name"] %> </h2>
-<%= image_tag(run["Itinerary_url"]) %>
+<%= image_tag(run["Itinerary_url"], "class" => "itinerary_banner") %>
+<% end %>
 <div class="row">
 <strong> Day </strong> <%= run["Day"] %>
 <ul class="list-unstyled">

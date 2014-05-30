@@ -1,15 +1,16 @@
 Final::Application.routes.draw do
 
 get "/" => "region#index"
+ # --- Create
+get "/region/new" => 'region#new'
+post "/region" => 'region#create'
 get "/region/:id" => "region#show"
 get "/region" => "region#index"
 get "/region/show" => "region#show"
 
  # Resource: Region
 
-  # --- Create
-  get "/region/new" => 'region#new'
-  post "/region" => 'region#create'
+
 
   # --- Read
   get "/region" => 'region#index'

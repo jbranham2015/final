@@ -42,6 +42,15 @@
     font-weight:bold;
     padding-top: 225px; }
 
+.bar {
+ padding-top: 225px;
+ width: 1140px;
+ position:absolute;
+ color:black;
+ font-size:18px;
+ font-weight:bold;
+}
+
 .banner2 {
     z-index:0;
     position:absolute;
@@ -54,10 +63,12 @@
 .row { margin-bottom: 36px; }
 
 
+/* . is a class, # is an id, nothing is everything that maps */
+.img_banner { width:1140px; height: 300px; border: 1px solid #CCC; box-shadow: 10px 10px 10px #999; }
 
+.itinerary_banner { width:1140px; height: 480px; border: 1px solid #CCC; }
 
-
-#page_start { padding-top: 275px;}
+#page_start { padding-top: 300px;}
 
 
 
