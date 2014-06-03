@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603021158) do
+ActiveRecord::Schema.define(version: 20140603034310) do
 
   create_table "budgets", force: true do |t|
     t.integer "Length"

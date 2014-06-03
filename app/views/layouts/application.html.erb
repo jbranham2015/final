@@ -22,10 +22,15 @@
                 <li><a href="/trip">Trips</a></li>
                 <li><a href="/itinerary">Itineraries</a></li>
                 <li><a href="/contact">Contacts</a></li>
-                <li><a href="/users/new">Sign Up</a></li>
-                <li><a href="/login">Sign In</a></li>
-                <li><a href="/logout">Log Out</a></li>
-             <form class="navbar-form navbar-right" role="search">
+                <% user = User.find_by("id" => cookies["user_id"]) %>
+                          <% if user.present? %>
+                          <li> Welcome <%= user["name"] %></li>
+                           <li><%= link_to "Sign Out", '/logout' %></li>
+                        <% else %>
+                           <li><%= link_to "Sign Up", '/users/new' %></li>
+                           <li><%= link_to "Sign In", '/login' %></li>
+                        <% end %>
+          <form class="navbar-form navbar-right" role="search">
              <div class="form-group">
                 <input type="text" class="form-control" placeholder="Adding search soon!">
              </div>
@@ -34,16 +39,12 @@
           </ul>
         </div>
 
-       <% user = User.find_by("id" => cookies["user_id"]) %>
-            <% if user.present? %>
-              Welcome <%= user["name"] %>
-              <% end %>
-       <div id="page_start">
+    <div id="page_start">
        </div>
 
     <%= yield %>
   <nav class="navbar navbar-default navbar-bottom navbar-right" role="navigation">
-   <a href="/"><i class="fa fa-home"></i> Back to Regions Home</a>
+   <h3><a href="/"><i class="fa fa-home"></i> Back to Home</a></h3>
   </nav>
 </div>
 </body>

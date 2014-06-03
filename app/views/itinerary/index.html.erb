@@ -7,8 +7,8 @@
      <span class="glyphicon glyphicon-plane"> </span> Itinerary </button>
        <% itinerary.each do |run| %>
           <% if run["Day"] ==1 %>
-          <h2> <%= run["Name"] %> </h2>
-          <%= image_tag(run["Itinerary_url"], "class" => "itinerary_banner") %>
+          <h2> <%= link_to run["Name"], "/trip/#index", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
+          <%= link_to image_tag(run["Itinerary_url"], "class" => "itinerary_banner"), "/trip/#index" %>
   <% end %>
 
   <div class="row">

@@ -1,7 +1,7 @@
 Region.delete_all
 na = Region.create("Name" => "North America", "Picture_url" => "http://travelacrossusa.files.wordpress.com/2012/08/banner3.jpg")
 eu = Region.create("Name" => "Europe", "Picture_url" => "http://www.37framesphotographyblog.com/wp-content/uploads/2013/05/Europe-stories-banner-blog.jpg")
-ca = Region.create("Name" => "Carribbean", "Picture_url" => "http://www.brownelltravel.com/wp-content/uploads/2013/03/Caribbean-Banner-2.png")
+ca = Region.create("Name" => "Carribbean", "Picture_url" => "http://offthehookflyfishing.com/sites/default/files/images/Belize_Banner.jpeg")
 sa = Region.create("Name" => "Central and South America", "Picture_url" => "http://www.bsl.com.mt/images/banner3.jpg")
 as = Region.create("Name" => "Asia", "Picture_url" => "http://www.thegaptravelguide.com/images/uploads/south_east_asia_banner1.jpg")
 af = Region.create("Name" => "Africa", "Picture_url" => "http://www.rivercruiseescapes.com/wp-content/uploads/2012/01/Africa-cruise-banner.jpg")
