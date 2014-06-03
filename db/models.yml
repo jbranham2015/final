@@ -17,7 +17,7 @@ Country:
 Trip:
   - Name: string
   - Picture_url: string
-  - Description: string
+  - Description: text
   - Itinerary_url: string
   - Budget_url: string
   - Priority_url: string
