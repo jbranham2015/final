@@ -6,11 +6,13 @@ User:
 Region:
   - Name: string
   - Picture_url: string
+  - Page_count: integer
 
 Country:
   - Name: string
   - Picture_url: string
   - Region_id: integer
+  - Page_count: integer
 
 Trip:
   - Name: string
@@ -20,6 +22,7 @@ Trip:
   - Budget_url: string
   - Priority_url: string
   - Country_id: integer
+  - Page_count: integer
 
 Itinerary:
   - Name: string

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603034310) do
+ActiveRecord::Schema.define(version: 20140603035908) do
 
   create_table "budgets", force: true do |t|
     t.integer "Length"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140603034310) do
     t.string  "Name"
     t.string  "Picture_url"
     t.integer "Region_id"
+    t.integer "Page_count"
   end
 
   create_table "itineraries", force: true do |t|
@@ -64,8 +65,9 @@ ActiveRecord::Schema.define(version: 20140603034310) do
   end
 
   create_table "regions", force: true do |t|
-    t.string "Name"
-    t.string "Picture_url"
+    t.string  "Name"
+    t.string  "Picture_url"
+    t.integer "Page_count"
   end
 
   create_table "trips", force: true do |t|
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140603034310) do
     t.string  "Budget_url"
     t.string  "Priority_url"
     t.integer "Country_id"
+    t.integer "Page_count"
   end
 
   create_table "users", force: true do |t|
