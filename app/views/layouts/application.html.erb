@@ -2,49 +2,49 @@
 <html>
   <head>
     <title>Ex-Travel-Ganza</title>
-    <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
-
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= csrf_meta_tags %>
+       <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
+       <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+       <%= stylesheet_link_tag    "application", media: "all" %>
+       <%= javascript_include_tag "application" %>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <%= csrf_meta_tags %>
   </head>
 <body>
 
-<div class="container">
-
-        <div class="row">
-
-             <img src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg" class="img-responsive" alt="Responsive image" id="topimage">
-
-
+   <div class="container">
+       <div class="row">
+           <img src="http://clubscachefly.cachefly.net/203/images/category/banner_caribbean.jpg" class="img-responsive" alt="Responsive image" id="topimage">
        </div>
+      <div class="bar">
+         <ul class="nav nav-tabs">
+              <li class="active"> <a href="/">Regions</a></li>
+                <li><a href="/country">Countries</a></li>
+                <li><a href="/trip">Trips</a></li>
+                <li><a href="/itinerary">Itineraries</a></li>
+                <li><a href="/contact">Contacts</a></li>
+                <li><a href="/users/new">Sign Up</a></li>
+                <li><a href="/login">Sign In</a></li>
+                <li><a href="/logout">Log Out</a></li>
+             <form class="navbar-form navbar-right" role="search">
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Adding search soon!">
+             </div>
+            <button type="submit" class="btn btn-default">Submit </button>
+           </form>
+          </ul>
+        </div>
 
-<div class="bar">
-  <ul class="nav nav-tabs nav-justified">
-    <li class="active"><a href="/">Regions</a></li>
-    <li><a href="/country">Countries</a></li>
-    <li><a href="/trip">Trips</a></li>
-    <li><a href="/itinerary">Itineraries</a></li>
-    <li><a href="/contact">Contacts</a></li>
-    <li><a href="/users/new">Sign Up</a></li>
-    <li><a href="/login">Sign In</a></li>
-    <li><a href="/logout">Log Out</a></li>
-  </ul>
-  </div>
-
- <% user = User.find_by("id" => cookies["user_id"]) %>
+       <% user = User.find_by("id" => cookies["user_id"]) %>
             <% if user.present? %>
               Welcome <%= user["name"] %>
               <% end %>
+       <div id="page_start">
+       </div>
 
-
-
-
-<div id="page_start">
-</div>
-
-<%= yield %>
+    <%= yield %>
+  <nav class="navbar navbar-default navbar-bottom navbar-right" role="navigation">
+   <a href="/"><i class="fa fa-home"></i> Back to Regions Home</a>
+  </nav>
 </div>
 </body>
 </html>

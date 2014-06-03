@@ -193,6 +193,24 @@ User.delete_all
 jeff = User.create("username" => "jeff", "password" => "hockey", "name" => "Jeff Cohen")
 brian = User.create("username" => "brian", "password" => "homework", "name" => "Brian Eng")
 
+Priorities.delete_all
+Priorities.create("Culture" => 4, "Nightlife" => 3, "Physical_exertion" => 2, "Accomodation" => 4, "Free_time" => 2, "Trip_id" => de.id)
+Priorities.create("Culture" => 2, "Nightlife" => 5, "Physical_exertion" => 2, "Accomodation" => 4, "Free_time" => 2, "Trip_id" => it.id)
+Priorities.create("Culture" => 2, "Nightlife" => 3.5, "Physical_exertion" => 4, "Accomodation" => 3.5, "Free_time" => 2, "Trip_id" => ni.id)
+Priorities.create("Culture" => 3, "Nightlife" => 4, "Physical_exertion" => 2, "Accomodation" => 4, "Free_time" => 2, "Trip_id" => za.id)
+Priorities.create("Culture" => 4, "Nightlife" => 2, "Physical_exertion" => 5, "Accomodation" => 2, "Free_time" => 2, "Trip_id" => al.id)
+Priorities.create("Culture" => 2, "Nightlife" => 5, "Physical_exertion" => 1, "Accomodation" => 5, "Free_time" => 2, "Trip_id" => ar.id)
+Priorities.create("Culture" => 5, "Nightlife" => 2, "Physical_exertion" => 3, "Accomodation" => 3, "Free_time" => 2, "Trip_id" => vi.id)
+
+Budget.delete_all
+Budget.create("Length" => 8, "Estimated_budget" => 3000, "Flight" => 1400, "Meal" => 450, "Lodging" => 450, "Activities" => 350, "Transportation" => 350, "Other" => 0, "Trip_id" => de.id)
+Budget.create("Length" => 7, "Estimated_budget" => 3250, "Flight" => 1500, "Meal" => 300, "Lodging" => 750, "Activities" => 325, "Transportation" => 225, "Other" => 150, "Trip_id" => it.id)
+Budget.create("Length" => 8, "Estimated_budget" => 2600, "Flight" => 700, "Meal" => 300, "Lodging" => 700, "Activities" => 450, "Transportation" => 300, "Other" => 150, "Trip_id" => ni.id)
+Budget.create("Length" => 8, "Estimated_budget" => 3250, "Flight" => 1850, "Meal" => 350, "Lodging" => 420, "Activities" => 430, "Transportation" => 50, "Other" => 0, "Trip_id" => za.id)
+Budget.create("Length" => 8, "Estimated_budget" => 1700, "Flight" => 700, "Meal" => 300, "Lodging" => 200, "Activities" => 200, "Transportation" => 200, "Other" => 100, "Trip_id" => al.id)
+Budget.create("Length" => 8, "Estimated_budget" => 3000, "Flight" => 750, "Meal" => 500, "Lodging" => 515, "Activities" => 500, "Transportation" => 500, "Other" => 235, "Trip_id" => ar.id)
+Budget.create("Length" => 8, "Estimated_budget" => 3000, "Flight" => 1600, "Meal" => 300, "Lodging" => 300, "Activities" => 400, "Transportation" => 300, "Other" => 100, "Trip_id" => vi.id)
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

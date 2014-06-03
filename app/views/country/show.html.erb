@@ -1,80 +1,79 @@
-
-<p id="text">
-        Pick Your Next Trip
-</p>
-
 <% country_id = params["id"] %>
 <% countries = Country.read(country_id) %>
 <% trips = Trip.read("Country_id" => countries["id"]) %>
 
-
 <ul class="list-unstyled">
-
-  <% trips.each do |run| %>
-<dl>
-  <dt>Trip Summary</dt>
-      <dd>
-           <p class="text-justify">
+   <% trips.each do |run| %>
+     <dl>
+       <dt><i class="fa fa-tasks"></i> Trip Summary</dt>
+          <dd>
+            <p class="text-justify">
               <%= run["Description"] %>
-           </p>
-      </dd>
-  </dl>
-      <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %>
-
-            <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
+            </p>
+          </dd>
+     </dl>
+  <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %>
+  <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
 </br>
 </br>
 <dl>
-    <dt>Trip Budget</dt>
+    <dt> <i class="fa fa-usd"></i> Trip Budget</dt>
       <dd>
           All budget items are estimates and based on airfare from the ChicagoLand Area
       </dd>
     </dl>
-     <%= image_tag(run["Budget_url"]) %>
-
+  <%= image_tag(run["Budget_url"]) %>
 </br>
 </br>
 </br>
-<div class="row">
-  <div class="col-md-4">
+  <div class="row">
+    <div class="col-md-4">
+       <ul class="list-group">
+       <dl>
+         <dt> <i class="fa fa-list-ol"></i> Trip Priorities</dt>
+            <dd>
+                Rankings are based on the following criteria
+           </dd>
+      </dl>
+    <p>
+      <li class="list-group-item list-group-item-info"> <strong>Culture / Sightseeing:</strong>
+           <li class="list-group-item">1=Museums exist in this country</li>
+           <li class="list-group-item">5=Ruins, monuments, museums, OH MY!</li>
+         </ul>
+    </p>
+    <p>
+      <li class="list-group-item list-group-item-info"><strong> Nightlife: </strong>
+        <li class="list-group-item">1=We need our beauty sleep so lights out at 10pm</li>
+        <li class="list-group-item">5=Sleep when you’re dead YOLO!</li>
+   </p>
+   <p>
+      <li class="list-group-item list-group-item-info"><strong> Physical Exertion: </strong>
+         <li class="list-group-item">1=Getting to the beach lounger was enough activity for today</li>
+         <li class="list-group-item">5=You should probably start hitting the gym now to prep</li>
+   </p>
+  <p>
+      <li class="list-group-item list-group-item-info"><strong>Accommodation: </strong>
+        <li class="list-group-item">1=Hostel</li>
+        <li class="list-group-item">5=Villa, baby!</li>
+  </p>
+  <p>
+     <li class="list-group-item list-group-item-info"> <strong>Free time: </strong>
+        <li class="list-group-item">1=Go, go, go!!!</li>
+        <li class="list-group-item">5=We need our ‘me’ time</li>
+   </p>
+  </div>
+  <div class="col-md-6">
+    <%= image_tag(run["Priority_url"]) %>
+  </div>
+ </div>
     <dl>
-      <dt>Trip Priorities</dt>
-        <dd>
-            Rankings are based on the following criteria
+    <dt> <i class="fa fa-calendar"></i> Trip Itinerary</dt>
+      <dd>
+
       </dd>
     </dl>
- <p>
-   <strong>Culture / Sightseeing:</strong>
-       <li>1=Museums exist in this country</li>
-       <li>5=Ruins, monuments, museums, OH MY!</li>
- </p>
- <p>
-    <strong> Nightlife: </strong>
-        <li>1=We need our beauty sleep so lights out at 10pm</li>
-        <li>5=Sleep when you’re dead YOLO!</li>
- </p>
- <p>
-     <strong> Physical Exertion: </strong>
-         <li>1=Getting to the beach lounger was enough activity for today</li>
-         <li>5=You should probably start hitting the gym now to prep</li>
- </p>
- <p>
-     <strong>Accommodation: </strong>
-           <li>1=Hostel</li>
-           <li>5=Villa, baby!</li>
- </p>
- <p>
-     <strong>Free time: </strong>
-           <li>1=Go, go, go!!!</li>
-           <li>5=We need our ‘me’ time</li>
- </p>
- </div>
-<div class="col-md-6">
-   <%= image_tag(run["Priority_url"]) %>
-</div>
-</div>
-<%= image_tag(run["Itinerary_url"]) %>
+    <%= image_tag(run["Itinerary_url"], "class" => "itinerary_banner") %>
 <% end %>
 </ul>
 
-
+<h3> <span class="label label-danger"> Check back for new Trips every Sunday! </span> </h3>

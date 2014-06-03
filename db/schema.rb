@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527214650) do
+ActiveRecord::Schema.define(version: 20140603021158) do
+
+  create_table "budgets", force: true do |t|
+    t.integer "Length"
+    t.integer "Estimated_budget"
+    t.integer "Flight"
+    t.integer "Meal"
+    t.integer "Lodging"
+    t.integer "Activities"
+    t.integer "Transportation"
+    t.integer "Other"
+    t.string  "Trip_id"
+  end
 
   create_table "contacts", force: true do |t|
     t.string  "Type"
@@ -40,6 +52,15 @@ ActiveRecord::Schema.define(version: 20140527214650) do
     t.string  "Itinerary_url"
     t.integer "Trip_id"
     t.string  "Name"
+  end
+
+  create_table "priorities", force: true do |t|
+    t.integer "Culture"
+    t.integer "Nightlife"
+    t.integer "Physical_exertion"
+    t.integer "Accomodation"
+    t.integer "Free_time"
+    t.integer "Trip_id"
   end
 
   create_table "regions", force: true do |t|

@@ -2,20 +2,19 @@
 <% regions = Region.read(region_id) %>
 <% countries = Country.read("Region_id" => regions["id"]) %>
 
-<p id="text">
-        Explore Trips By Region
-    </p>
+<div class="page-header">
+  <h1><i class="fa fa-life-ring"></i> Explore Trips by Region </h1>
+</div>
 
 <ul class="list-unstyled">
-<% countries.each do |run| %>
+  <% countries.each do |run| %>
     <%= link_to run["Name"], "/country/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %>
       <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/country/#{run["id"]}" %>
-
-<hr>
+  <hr>
 <% end %>
 </ul>
 
-
+<h3> <span class="label label-danger"> Check back for new Countries every Sunday! </span> </h3>
 
 
 

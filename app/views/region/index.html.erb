@@ -1,68 +1,65 @@
 
 
+<div class="jumbotron">
+  <h1>Welcome to Ex-Travel-Ganza</h1>
+  <p>Your portal to the most outrageous, adventurous, worldwide, 7-day vacations you've never had to plan!  If you've ever had 7 days to burn and became overwhelmed by the thought of who/what/where/when/why/how you are suppsoed to plan your vacation....let us be your solution.  With 38 different trips (and more added each week), covering 6 continents, we would love to save you the time and energy so you can focus on the important things...like having the adventure of a life-time for you and your closests friends.</p>
+  <p>    <button type="button" class="btn btn-info btn-lg active">
+         <span class="glyphicon glyphicon-user"> </span><%= link_to "Click here to sign-up", "/users/new" %> </button> </p>
 
-    <p id="text">
-        Welcome to Ex-Travel-Ganza
-    </p>
+</div>
 
 <dl>
   <dt>Who We Are  <span class="glyphicon glyphicon-plane"> </span>  </dt>
-         <dd>
-           <p class="text-justify">
-               Your portal to the most outrageous, adventerous, worldwide, 7-day vacations you've never had to plan!  If you've ever had 7 days to burn and became overwhelmed by the thought of who/what/where/when/why/how you are suppsoed to plan your vacation....we are your one-stop shop solution.
-           </p>
+      <dd>
+         <p class="text-justify">
+               A group of world-travelers, fixated on creating the most epic adventures our budgets will allow, all-while maximizing our time in-country.  We realized the hardest, and least fun part of every trip is the up-front planning, so we decided to turn our trips around and share them with the world so you can book your next trip without hours of searching, except for where your credit card ran off to and which country to run off to next!
+         </p>
       </dd>
-  </dl>
-
+</dl>
 <dl>
   <dt>What you will find on our site <span class="glyphicon glyphicon-briefcase"></dt>
       <dd>
-           <p class="text-justify">
+        <p class="text-justify">
                A never ending list of pre-built itineraries which were excruciatingly planned, and then awesomely traveled yearly by 800+ of the most exclusive business school travelers in the country: Kellogg MBA students.  Each trip includes a high-level budget, a list of providers for each activity and is ranked by level of:
-           </p>
-      </dd>
-  </dl>
-
+        </p>
+     </dd>
+</dl>
 <p>
-   <li> Culture/sightseeing </li>
-   <li>Nightlife </li>
-   <li> Physical Exertion</li>
-   <li> Accomodations</li>
-   <li> Free Time </li>
+  <li> Culture/sightseeing </li>
+  <li>Nightlife </li>
+  <li> Physical Exertion</li>
+  <li> Accomodations</li>
+  <li> Free Time </li>
 </p>
-
 <dl>
   <dt>How you should navigate <span class="glyphicon glyphicon-road"></dt>
-      <dd>
-           <p class="text-justify">
+    <dd>
+      <p class="text-justify">
                 Start by identifying what continent you'd like to travel.  You will then see a list of countries with itineraries to suit your needs.  Each country has a list of multiple trips, which you can then sort through to view specific 7-day itineraries and a list of contacts to start booking!  So sit back, relax and enjoy perusing some of the best trips your brain could possibly imagine, all without spending a minute researching each location.
-           </p>
-      </dd>
-  </dl>
+      </p>
+    </dd>
+</dl>
 
 <% region = Region.read %>
-
-<ul class="list-unstyled">
-
-<% region.each do |run| %>
- <button type="button" class="btn btn-primary btn-lg btn-block active">
-   <span class="glyphicon glyphicon-plus-sign"> </span><%= link_to "Add a New Region", "/region/new" %> </button>
-
-   <button type="button" class="btn btn-default btn-lg btn-block active">
-   <span class="glyphicon glyphicon-globe"> </span> <%= link_to run["Name"], "/region/#{run["id"]}" %> </button>
-
-        <div class="row">
-        <div class="col-md-12">
-          <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/region/#{run["id"]}" %>
-       </div>
-      </div>
+  <ul class="list-unstyled">
+    <% region.each do |run| %>
+       <button type="button" class="btn btn-primary btn-lg btn-block active">
+         <span class="glyphicon glyphicon-plus-sign"> </span><%= link_to "Add a New Region", "/region/new" %> </button>
+      <button type="button" class="btn btn-default btn-lg btn-block active">
+         <span class="glyphicon glyphicon-globe"> </span> <%= link_to run["Name"], "/region/#{run["id"]}" %> </button>
+            <div class="row">
+            <div class="col-md-12">
+              <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/region/#{run["id"]}" %>
+          </div>
+        </div>
      <button type="button" class="btn btn-primary btn-lg active">
-        <span class="glyphicon glyphicon-edit"> </span> <%= link_to "Edit", "/region/#{run["id"]}/edit" %> </button>
-
-    <button type="button" class="btn btn-default btn-lg active">
-         <span class="glyphicon glyphicon-ban-circle"> </span> <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete" %> </button>
-
-<hr>
+       <span class="glyphicon glyphicon-edit"> </span> <%= link_to "Edit", "/region/#{run["id"]}/edit" %> </button>
+     <button type="button" class="btn btn-default btn-lg active">
+       <span class="glyphicon glyphicon-ban-circle"> </span> <%= link_to "Delete", "/region/#{run["id"]}", "method" => "delete" %> </button>
+   <hr>
 <% end %>
 </ul>
+
+<h3> <span class="label label-danger"> Check back for new trips every Sunday! </span> </h3>
+
 

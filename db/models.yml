@@ -42,8 +42,24 @@ Contact:
   - Website: string
   - Trip_id: integer
 
+Priorities:
+  - Culture: integer
+  - Nightlife: integer
+  - Physical_exertion: integer
+  - Accomodation: integer
+  - Free_time: integer
+  - Trip_id: integer
 
-
+Budget:
+  - Length: integer
+  - Estimated_budget: integer
+  - Flight: integer
+  - Meal: integer
+  - Lodging: integer
+  - Activities: integer
+  - Transportation: integer
+  - Other: integer
+  - Trip_id: string
 
 
 # Example table for a typical Book model.

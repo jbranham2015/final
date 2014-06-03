@@ -1,43 +1,31 @@
-  <p id="text">
-        Book Your Excursions
-    </p>
-<button type="button" class="btn btn-primary btn-lg btn-block disabled">
-   <span class="glyphicon glyphicon-phone-alt"> </span> Contacts </button>
+<div class="page-header">
+  <h1> <i class="fa fa-fax"></i> Booking contacts for your itinerary <small> (Sorted by country) </small></h1>
+</div>
 
+
+<button type="button" class="btn btn-primary btn-lg btn-block disabled">
+   <span class="glyphicon glyphicon-phone-alt"> </span> Contacts
+</button>
 
 <% contacts = Contact.read %>
-<ul class="list-unstyled">
-<% contacts.each do |run| %>
-<h3> <strong>  <%= run["Name"] %> </strong> </h3>
-<li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
-<li> <strong> Company Name: </strong>   <%= link_to run["Company_name"] , run["Website"] %> </li>
-<li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
-<li> <strong> Address:  </strong> <%= run["Address"] %> </li>
-<li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
-<hr>
-<p>
-</p>
-<% end %>
-</ul>
-
-
+</br>
 <table class="table table-striped table-bordered table-hover table-condensed">
-<tr>
-  <th>Country</th>
-  <th>Event Type</th>
-  <th>Company Name</th>
-  <th>Personal Contact (if any)</th>
-  <th>Address</th>
-  <th>Phone Number(if any)</th>
-</tr>
-<% contacts.each do |run| %>
-<tr class="active">
-  <td><strong> <%= run["Name"] %> </strong></td>
-  <td><%= run["Type"] %></td>
-  <td><%= link_to run["Company_name"], run["Website"] %></td>
-  <td><%= run["Contact"] %></td>
-   <td><%= run["Address"] %></td>
+  <tr>
+    <th>Country</th>
+    <th>Event Type</th>
+    <th>Company Name</th>
+    <th>Personal Contact (if any)</th>
+    <th>Address</th>
+    <th>Phone Number(if any)</th>
+  </tr>
+ <% contacts.each do |run| %>
+  <tr class="active">
+    <td><strong> <%= run["Name"] %> </strong></td>
+    <td><%= run["Type"] %></td>
+    <td><%= link_to run["Company_name"], run["Website"] %></td>
+    <td><%= run["Contact"] %></td>
+    <td><%= run["Address"] %></td>
     <td><%= run["Phone_number"] %></td>
-   </tr>
-<% end %>
+  </tr>
+ <% end %>
 </table>

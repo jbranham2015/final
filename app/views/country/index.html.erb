@@ -1,20 +1,14 @@
-
-  <p id="text">
-        Explore Our Countries
-    </p>
-
+<div class="page-header">
+  <h1><i class="fa fa-globe"></i> Explore trips by country <small> (Multiple trips per country available) </small></h1>
+</div>
 <% country = Country.read %>
-
-<ul class="list-unstyled">
-<% country.each do |run| %>
-
-
- <h2><%= link_to run["Name"], "/country/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
- <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/country/#{run["id"]}" %>
-
-<hr>
+  <ul class="list-unstyled">
+     <% country.each do |run| %>
+        <h2><%= link_to run["Name"], "/country/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
+        <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/country/#{run["id"]}" %>
+      <hr>
 <% end %>
-</ul>
+  </ul>
 
-
+<h3> <span class="label label-danger"> Check back for new Countries every Sunday! </span> </h3>
 

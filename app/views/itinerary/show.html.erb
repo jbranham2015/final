@@ -3,28 +3,26 @@
 <% contacts = Contact.read("Trip_id" => itineraries["id"]) %>
 
 <ul class="list-unstyled">
-<% contacts.each do |run| %>
-<li>Type of Event:   <%= link_to run["Type"] %> </li>
-<li>Company Name:   <%= link_to run["Company_name"], run["Website"] %> </li>
-<li>Personal Contact (if any):   <%= run["Contact"] %> </li>
-<li>Address:   <%= run["Address"] %> </li>
-<li>Phone Number:   <%= run["Phone_number"] %> </li>
-<p></p>
+  <% contacts.each do |run| %>
+    <li>Type of Event:   <%= link_to run["Type"] %> </li>
+    <li>Company Name:   <%= link_to run["Company_name"], run["Website"] %> </li>
+    <li>Personal Contact (if any):   <%= run["Contact"] %> </li>
+    <li>Address:   <%= run["Address"] %> </li>
+    <li>Phone Number:   <%= run["Phone_number"] %> </li>
+  <p></p>
 <% end %>
 </ul>
 
-
 <p></p>
 
-<ul class="list-unstyled">
-<h2> Booking Contacts For Your Adventure </h2>
-<% contacts.each do |run| %>
-<li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
-<li> <strong> Company Name: </strong>   <%= link_to run["Company_name"] , run["Website"] %> </li>
-<li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
-<li> <strong> Address:  </strong> <%= run["Address"] %> </li>
-<li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
-<p>
-</p>
-<% end %>
-</ul>
+  <ul class="list-unstyled">
+    <h2> Booking Contacts For Your Adventure </h2>
+      <% contacts.each do |run| %>
+        <li> <strong> Type of Event: </strong> <%= run["Type"] %>  </li>
+        <li> <strong> Company Name: </strong>   <%= link_to run["Company_name"] , run["Website"] %> </li>
+        <li> <strong> Personal Contact (if any): </strong>  <%= run["Contact"] %> </li>
+        <li> <strong> Address:  </strong> <%= run["Address"] %> </li>
+        <li> <strong> Phone Number: </strong>  <%= run["Phone_number"] %> </li>
+      <p></p>
+      <% end %>
+  </ul>

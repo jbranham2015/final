@@ -1,17 +1,13 @@
-  <p id="text">
-        Pick Your Next Trip
-    </p>
+<div class="page-header">
+  <h1><i class="fa fa-globe"></i> Explore all available trips </h1>
+</div>
 
 <% trip = Trip.read %>
-
-<ul class="list-unstyled">
-<% trip.each do |run| %>
-
-
-<h2> <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
-<%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
-
-<hr>
+  <ul class="list-unstyled">
+    <% trip.each do |run| %>
+      <h2> <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
+      <%=link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
+    <hr>
 <% end %>
 </ul>
-
+<h3> <span class="label label-danger"> Check back for new trips every Sunday! </span> </h3>
