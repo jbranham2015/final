@@ -62,7 +62,7 @@ Budget:
   - Activities: integer
   - Transportation: integer
   - Other: integer
-  - Trip_id: string
+  - Trip_id: integer
 
 
 # Example table for a typical Book model.
