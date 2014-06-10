@@ -17,35 +17,9 @@
   <%= link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
 </br>
 </br>
-<dl>
-    <dt> <i class="fa fa-usd"></i> Trip Budget</dt>
-      <dd>
-          All budget items are estimates and based on airfare from the ChicagoLand Area
-      </dd>
-    </dl>
-  <%= image_tag(run["Budget_url"]) %>
-</br>
-</br>
-</br>
   <div class="row">
-    <div class="col-md-4">
-       <ul class="list-group">
-           <li class="list-group-item list-group-item-info"> <strong>Budget: </strong> (Table to be updated soon, I will delete above .jpeg after table updated) </li>
-           <li class="list-group-item"><strong> Length: </strong><%= run["Length"] %> 8 days</li>
-           <li class="list-group-item"><strong> Estimated Budget: </strong> $<%= run["Estimated_budget"] %></li>
-           <li class="list-group-item"><strong> Flight: </strong> $ <%= run["Flight"] %></li>
-           <li class="list-group-item"><strong> Meals: </strong> $ <%= run["Meal"] %></li>
-           <li class="list-group-item"><strong>Lodging: </strong> $ <%= run["Lodging"] %></li>
-           <li class="list-group-item"><strong>Activities: </strong> $ <%= run["Activities"] %></li>
-           <li class="list-group-item"><strong> Other: </strong> $ <%= run["Other"] %></li>
-     </p>
-  </div>
-
-
-
-
-
-    <div class="col-md-4">
+    <div class="col-md-6">
+     <% priorities = Priorities.where("Trip_id" => run["id"]) %>
        <ul class="list-group">
        <dl>
          <dt> <i class="fa fa-list-ol"></i> Trip Priorities</dt>
@@ -53,80 +27,83 @@
                 Rankings are based on the following criteria
            </dd>
       </dl>
+          <li class="list-group-item list-group-item-info"> <strong>Culture / Sightseeing:
+
+              <% priorities.average(:Culture).to_i.times do %>
+                  &star;
+              <% end %></strong>  </li>
+
+           <li class="list-group-item">1= Museums exist in this country</li>
+           <li class="list-group-item">5= Ruins, monuments, museums, OH MY!</li>
     <p>
-      <li class="list-group-item list-group-item-info"> <strong>Culture / Sightseeing:</strong>
-           <li class="list-group-item">1=Museums exist in this country</li>
-           <li class="list-group-item">5=Ruins, monuments, museums, OH MY!</li>
-         </ul>
+      <li class="list-group-item list-group-item-info"><strong> Nightlife:
+
+            <% priorities.average(:Nightlife).to_i.times do %>
+                &star;
+            <% end %></strong></li>
+
+        <li class="list-group-item">1= We need our beauty sleep so lights out at 10pm</li>
+        <li class="list-group-item">5= Sleep when you’re dead YOLO!</li>
     </p>
-    <p>
-      <li class="list-group-item list-group-item-info"><strong> Nightlife: </strong>
-        <li class="list-group-item">1=We need our beauty sleep so lights out at 10pm</li>
-        <li class="list-group-item">5=Sleep when you’re dead YOLO!</li>
+   <p>
+      <li class="list-group-item list-group-item-info"><strong> Physical Exertion:
+
+          <% priorities.average(:Physical_exertion).to_i.times do %>
+              &star;
+          <% end %></strong></li>
+
+         <li class="list-group-item">1= Getting to the beach lounger was enough activity for today</li>
+         <li class="list-group-item">5= You should probably start hitting the gym now to prep</li>
+    </p>
+   <p>
+      <li class="list-group-item list-group-item-info"><strong>Accommodation:
+
+          <% priorities.average(:Accomodation).to_i.times do %>
+              &star;
+          <% end %></strong></li>
+
+        <li class="list-group-item">1= Hostel</li>
+        <li class="list-group-item">5= Villa, baby!</li>
    </p>
    <p>
-      <li class="list-group-item list-group-item-info"><strong> Physical Exertion: </strong>
-         <li class="list-group-item">1=Getting to the beach lounger was enough activity for today</li>
-         <li class="list-group-item">5=You should probably start hitting the gym now to prep</li>
-   </p>
-  <p>
-      <li class="list-group-item list-group-item-info"><strong>Accommodation: </strong>
-        <li class="list-group-item">1=Hostel</li>
-        <li class="list-group-item">5=Villa, baby!</li>
-  </p>
-  <p>
-     <li class="list-group-item list-group-item-info"> <strong>Free time: </strong>
-        <li class="list-group-item">1=Go, go, go!!!</li>
-        <li class="list-group-item">5=We need our ‘me’ time</li>
-   </p>
+     <li class="list-group-item list-group-item-info"> <strong>Free time:
+
+         <% priorities.average(:Free_time).to_i.times do %>
+            &star;
+          <% end %></strong></li>
+
+        <li class="list-group-item">1= Go, go, go!!!</li>
+        <li class="list-group-item">5= We need our ‘me’ time</li>
+    </p>
+   </ul>
   </div>
-
-  <div class="col-md-4">
-     <h2>Trip Ratings</h2>
-
-    <% priorities = Priorities.where("Trip_id" => run["id"]) %>
-
-       <h4>Culture/Sightseeing:
-      <% priorities.average(:Culture).to_i.times do %>
-        &star;
-      <% end %>
-    </h4>
-
- <h4>Nightlife:
-      <% priorities.average(:Nightlife).to_i.times do %>
-        &star;
-      <% end %>
-    </h4>
-
-       <h4>Physical Exertion:
-      <% priorities.average(:Physical_exertion).to_i.times do %>
-        &star;
-      <% end %>
-    </h4>
-
-       <h4>Accomodation:
-      <% priorities.average(:Accomodation).to_i.times do %>
-        &star;
-      <% end %>
-    </h4>
-
-     <h4>Free Time:
-      <% priorities.average(:Free_time).to_i.times do %>
-        &star;
-      <% end %>
-    </h4>
-
+  <div class="col-md-6">
+          <ul class="list-group">
+          <dl>
+              <dt> <i class="fa fa-usd"></i> Trip Budget</dt>
+               <dd>
+                   All budget items are estimates and based on airfare from the ChicagoLand Area
+              </dd>
+         </dl>
+           <li class="list-group-item list-group-item-info"> <strong>Budget: </strong></li>
+           <% budget = Budget.where("Trip_id" => run["id"]) %>
+           <li class="list-group-item"><strong> Length: </strong><%= budget.average(:Length).to_i %> days</li>
+           <li class="list-group-item"><strong> Estimated Trip Total Per Person: </strong> $<%= budget.average(:Estimated_budget).to_i %></li>
+           <li class="list-group-item"><strong> Flight: </strong> $<%= budget.average(:Flight).to_i %></li>
+           <li class="list-group-item"><strong> Meals: </strong> $<%= budget.average(:Meal).to_i %></li>
+           <li class="list-group-item"><strong>Lodging: </strong> $<%= budget.average(:Lodging).to_i %></li>
+           <li class="list-group-item"><strong>Activities: </strong> $<%= budget.average(:Activities).to_i %></li>
+           <li class="list-group-item"><strong> Other: </strong> $<%= budget.average(:Other).to_i %></li>
+     </ul>
    </div>
  </div>
     <dl>
     <dt> <i class="fa fa-calendar"></i> Trip Itinerary</dt>
       <dd>
-
       </dd>
     </dl>
     <%= image_tag(run["Itinerary_url"], "class" => "itinerary_banner") %>
 <% end %>
-</ul>
 
 <h3> <span class="label label-danger"> Check back for new Trips every Sunday! </span> </h3>
 
