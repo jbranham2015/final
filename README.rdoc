@@ -3,7 +3,7 @@ Thanks for everything in this course!  I had a ton of fun and look forward to le
 1) Implement at least three models
 2) Allow users to sign up, sign in, sign out
 3) Populate the database via seed data
-4) Proper use of a CSSframework (used bootstrap)
+4) Proper use of a CSSframework (used bootstrap), also used font awesome, and glyphicons
 5) Deployed my add to a live internet URL
    - http://glacial-meadow-4053.herokuapp.com/
 
