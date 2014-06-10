@@ -7,7 +7,49 @@
     <% trip.each do |run| %>
       <h2> <%= link_to run["Name"], "/trip/#{run["id"]}", "class" => 'btn btn-lg btn-primary btn-block' %> </h2>
       <%= link_to image_tag(run["Picture_url"], "class" => "img_banner"), "/trip/#{run["id"]}" %>
+
+
+
+    <h2>Trip Ratings</h2>
+
+    <% priorities = Priorities.where("Trip_id" => run["id"]) %>
+
+       <h4>Culture/Sightseeing:
+      <% priorities.average(:Culture).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+       <h4>Nightlife:
+      <% priorities.average(:Nightlife).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+       <h4>Physical Exertion:
+      <% priorities.average(:Physical_exertion).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+       <h4>Accomodation:
+      <% priorities.average(:Accomodation).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+     <h4>Free Time:
+      <% priorities.average(:Free_time).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+
     <hr>
 <% end %>
 </ul>
+
 <h3> <span class="label label-danger"> Check back for new trips every Sunday! </span> </h3>
+
+
+

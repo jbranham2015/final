@@ -2,6 +2,7 @@
 <% countries = Country.read(country_id) %>
 <% trips = Trip.read("Country_id" => countries["id"]) %>
 
+
 <ul class="list-unstyled">
    <% trips.each do |run| %>
      <dl>
@@ -27,6 +28,23 @@
 </br>
 </br>
   <div class="row">
+    <div class="col-md-4">
+       <ul class="list-group">
+           <li class="list-group-item list-group-item-info"> <strong>Budget</strong>
+           <li class="list-group-item">Table to be updated soon<%= run["Length"] %></li>
+           <li class="list-group-item">Will delete .jpeg after table updated<%= run["Estimated_budget"] %></li>
+           <li class="list-group-item"><%= run["Flight"] %></li>
+           <li class="list-group-item"><%= run["Meal"] %></li>
+           <li class="list-group-item"><%= run["Lodging"] %></li>
+           <li class="list-group-item"><%= run["Activities"] %></li>
+           <li class="list-group-item"><%= run["Other"] %></li>
+     </p>
+  </div>
+
+
+
+
+
     <div class="col-md-4">
        <ul class="list-group">
        <dl>
@@ -62,9 +80,43 @@
         <li class="list-group-item">5=We need our ‘me’ time</li>
    </p>
   </div>
-  <div class="col-md-6">
-    <%= image_tag(run["Priority_url"]) %>
-  </div>
+
+  <div class="col-md-4">
+     <h2>Trip Ratings</h2>
+
+    <% priorities = Priorities.where("Trip_id" => run["id"]) %>
+
+       <h4>Culture/Sightseeing:
+      <% priorities.average(:Culture).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+ <h4>Nightlife:
+      <% priorities.average(:Nightlife).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+       <h4>Physical Exertion:
+      <% priorities.average(:Physical_exertion).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+       <h4>Accomodation:
+      <% priorities.average(:Accomodation).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+     <h4>Free Time:
+      <% priorities.average(:Free_time).to_i.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+   </div>
  </div>
     <dl>
     <dt> <i class="fa fa-calendar"></i> Trip Itinerary</dt>
@@ -77,3 +129,4 @@
 </ul>
 
 <h3> <span class="label label-danger"> Check back for new Trips every Sunday! </span> </h3>
+
